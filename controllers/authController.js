@@ -62,7 +62,7 @@ exports.Login = async (req, res) => {
 
 		const payload = {
 			user: {
-				id: user.id,
+				id: user._id,
 				accountUser: user.accountUser,
 				email: user.email,
 				fullName: user.password,
@@ -74,7 +74,7 @@ exports.Login = async (req, res) => {
 			{ expiresIn: 360000 },
 			(err, token) => {
 				if (err) throw err;
-				return res.json({ token });
+				return res.status(200).json({ token });
 			}
 		);
 	} catch (err) {

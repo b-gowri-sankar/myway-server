@@ -12,13 +12,12 @@ module.exports = function (req, res, next) {
 
 	try {
 		const decoded = jwt.verify(token, process.env.JSON_SECRET_KEY);
-		// console.log(decoded);
-		// console.log(decoded.user.accountUser === "Admin");
 		if (decoded.user.accountUser === "Admin") {
+			req.body.tokenUserId = decoded.user.id;
 			return next();
 		}
 		return res.status(401).json({ message: "Unauthorization" });
 	} catch (err) {
-		res.status(401).json({ mesage: "Token is not valid" });
+		return res.status(401).json({ mesage: "Token is not valid" });
 	}
 };
