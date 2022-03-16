@@ -26,6 +26,7 @@ app.use(
 );
 
 app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/blog", require("./routes/postRoutes"));
 
 connectDB();
 const PORT = process.env.PORT || 5000;
