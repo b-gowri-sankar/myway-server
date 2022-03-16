@@ -16,6 +16,9 @@ router.post(
 	signUp
 );
 
+//@desc LOGIN USER
+//POST /Login
+
 router.post(
 	"/Login",
 	check("password", "Password is Required").exists(),

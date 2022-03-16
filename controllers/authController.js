@@ -3,6 +3,9 @@ const bcrypt = require("bcrypt");
 const BlogUser = require("../models/BlogUser");
 const jwt = require("jsonwebtoken");
 
+//@desc REGISTER USER
+//POST /register
+
 exports.signUp = async (req, res) => {
 	const errors = validationResult(req);
 	if (!errors.isEmpty()) {
@@ -30,6 +33,9 @@ exports.signUp = async (req, res) => {
 		return res.status(500).json(err);
 	}
 };
+
+//@desc LOGIN USER
+//POST /Login
 
 exports.Login = async (req, res) => {
 	const errors = validationResult(req);
