@@ -7,8 +7,6 @@ const app = express();
 var cors = require("cors");
 
 var corsOptions = {
-	origin: "http://localhost:3000",
-	origin: "http://localhost:8000",
 	origin: "http://locahost:8001",
 	optionsSuccessStatus: 200,
 };
