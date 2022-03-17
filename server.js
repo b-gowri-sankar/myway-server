@@ -4,6 +4,14 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
+var cors = require("cors");
+
+var corsOptions = {
+	origin: "http://localhost:3000",
+	optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 const connectDB = async () => {
 	try {
